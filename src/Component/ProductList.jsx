@@ -1,68 +1,68 @@
-import { useEffect, useState } from "react";
-import { BounceLoader } from "react-spinners";
+// import { useEffect, useState } from "react";
+// import { BounceLoader } from "react-spinners";
 
-const override = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "red",
-};
+// const override = {
+//   display: "block",
+//   margin: "0 auto",
+//   borderColor: "red",
+// };
 
-const ProductList = () => {
-  const [products, setProducts] = useState(null);
+// const ProductList = () => {
+//   const [products, setProducts] = useState(null);
 
-  // One way
-  /*   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((data) => data.json())
-      .then((data) => setProducts(data));
-  }, []); */
+//   // One way
+//   /*   useEffect(() => {
+//     fetch("https://fakestoreapi.com/products")
+//       .then((data) => data.json())
+//       .then((data) => setProducts(data));
+//   }, []); */
 
-  // Second way
-  /*   useEffect(() => {
-    const callAPI = async () => {
-      const results = await fetch("https://fakestoreapi.com/products");
-      const parsedResult = await results.json();
-      setProducts(parsedResult);
-    };
+//   // Second way
+//   /*   useEffect(() => {
+//     const callAPI = async () => {
+//       const results = await fetch("https://fakestoreapi.com/products");
+//       const parsedResult = await results.json();
+//       setProducts(parsedResult);
+//     };
 
-    callAPI();
-  }, []); */
+//     callAPI();
+//   }, []); */
 
-  // Third way
-  useEffect(() => {
-    (async () => {
-      const results = await fetch("https://fakestoreapi.com/products");
-      const parsedResult = await results.json();
-      setProducts(parsedResult);
-    })();
-  });
+//   // Third way
+//   useEffect(() => {
+//     (async () => {
+//       const results = await fetch("https://fakestoreapi.com/products");
+//       const parsedResult = await results.json();
+//       setProducts(parsedResult);
+//     })();
+//   });
 
-  if (!products) {
-    return (
-      <BounceLoader
-        color={"#325795"}
-        loading={true}
-        cssOverride={override}
-        size={150}
-        aria-label="Loading Spinner"
-        data-testid="loader"
-      />
-    );
-  }
+//   if (!products) {
+//     return (
+//       <BounceLoader
+//         color={"#325795"}
+//         loading={true}
+//         cssOverride={override}
+//         size={150}
+//         aria-label="Loading Spinner"
+//         data-testid="loader"
+//       />
+//     );
+//   }
 
-  return (
-    <div>
-      <h1>My Products</h1>
-      {products.map((item) => {
-        return (
-          <div key={item.id}>
-            <p>{item.title}</p>
-            <p>₹ {item.price}</p>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <h1>My Products</h1>
+//       {products.map((item) => {
+//         return (
+//           <div key={item.id}>
+//             <p>{item.title}</p>
+//             <p>₹ {item.price}</p>
+//           </div>
+//         );
+//       })}
+//     </div>
+//   );
+// };
 
-export default ProductList;
+// export default ProductList;

@@ -1,9 +1,12 @@
 //import { useEffect } from "react";
+//import  { useContext } from "react";
 import HeroSection from "./Component/HeroSection";
 //import { useGlobalContext } from "./Context";
 
 
+
 const Home = () => {
+  
 const data = {
   name: "IT Service",
   image: "./image/hero.svg",
