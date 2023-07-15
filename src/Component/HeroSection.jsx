@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "./Button.js";
 import { useGlobalContext } from "../context.jsx";
+import PropTypes from "prop-types";
 
 
 const HeroSection = ({name, image}) => {
@@ -90,6 +91,10 @@ const Wrapper = styled.section`
   }
 `;
 
+HeroSection.propTypes = {
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};
 
 
 //const Wrapper = styled.section``;
